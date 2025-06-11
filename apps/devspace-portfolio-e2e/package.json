@@ -1,0 +1,10 @@
+{
+  "name": "@devspace/devspace-portfolio-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@devspace/devspace-portfolio"
+    ]
+  }
+}

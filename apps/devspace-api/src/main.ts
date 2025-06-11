@@ -3,18 +3,18 @@ import { app } from './app/app';
 
 const server = Fastify({
   logger: true,
+  disableRequestLogging: process.env.NODE_ENV === 'production',
 });
 
 server.register(app);
 
-if (process.env.NODE_ENV !== 'production') {
-  const host = process.env.HOST ?? 'localhost';
+if (process.env.NODE_ENV === 'development') {
   const port = process.env.PORT ? Number(process.env.PORT) : 3001;
 
   const start = async () => {
     try {
-      await server.listen({ port, host });
-      console.log(`Server is running at http://${host}:${port}`);
+      await server.listen({ port, host: '0.0.0.0' });
+      console.info(`Server is running on port ${port}`);
     } catch (err) {
       server.log.error(err);
       process.exit(1);

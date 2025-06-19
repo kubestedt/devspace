@@ -4,20 +4,11 @@ import { cors } from 'hono/cors';
 import { serve } from '@hono/node-server';
 import { handle } from '@hono/node-server/vercel';
 import { prettyJSON } from 'hono/pretty-json';
-import { routes } from './routes/root';
+import { routes } from './routes/root.js';
 
 const app = new Hono();
 
-app
-  .use('*', logger())
-  .use('*', prettyJSON())
-  .use(
-    '*',
-    cors({
-      origin: process.env.ALLOWED_ORIGINS?.split(',') || '*',
-      credentials: true,
-    })
-  );
+app.use('*', logger()).use('*', prettyJSON()).use(cors());
 
 app.route('', routes);
 app.get('/', (c) => c.json({ message: 'Welcome to DevSpace API' }));

@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { logger } from 'hono/logger';
 import { cors } from 'hono/cors';
 import { serve } from '@hono/node-server';
+import { handle } from '@hono/node-server/vercel';
 import { prettyJSON } from 'hono/pretty-json';
 import { routes } from './routes/root';
 
@@ -27,4 +28,4 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-export default app;
+export default handle(app);

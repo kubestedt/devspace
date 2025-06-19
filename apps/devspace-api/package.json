@@ -66,9 +66,10 @@
           "passWithNoTests": true
         }
       }
-    }
-  },
-  "dependencies": {
-    "hono": "^4.8.0"
+    },
+    "tags": [
+      "scope:api",
+      "type:app"
+    ]
   }
 }

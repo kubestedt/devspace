@@ -19,7 +19,8 @@ app
     })
   );
 
-app.route('/', routes);
+app.route('', routes);
+app.get('/', (c) => c.json({ message: 'Welcome to DevSpace API' }));
 
 if (process.env.NODE_ENV === 'development') {
   serve({

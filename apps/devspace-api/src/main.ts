@@ -21,7 +21,7 @@ app
 
 app.route('/', routes);
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'development') {
   serve({
     fetch: app.fetch,
     port: 3001,

@@ -10,14 +10,14 @@
         "outputs": [
           "{options.outputPath}"
         ],
-        "defaultConfiguration": "production",
+        "defaultConfiguration": "development",
         "options": {
-          "platform": "node",
+          "platform": "neutral",
           "outputPath": "apps/devspace-api/dist",
           "format": [
-            "cjs"
+            "esm"
           ],
-          "bundle": false,
+          "bundle": true,
           "main": "apps/devspace-api/src/main.ts",
           "tsConfig": "apps/devspace-api/tsconfig.app.json",
           "assets": [

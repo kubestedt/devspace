@@ -2,7 +2,6 @@
   "name": "@devspace/devspace-api",
   "version": "0.0.1",
   "private": true,
-  "type": "module",
   "nx": {
     "targets": {
       "build": {
@@ -10,14 +9,14 @@
         "outputs": [
           "{options.outputPath}"
         ],
-        "defaultConfiguration": "development",
+        "defaultConfiguration": "production",
         "options": {
-          "platform": "neutral",
+          "platform": "node",
           "outputPath": "apps/devspace-api/dist",
           "format": [
-            "esm"
+            "cjs"
           ],
-          "bundle": true,
+          "bundle": false,
           "main": "apps/devspace-api/src/main.ts",
           "tsConfig": "apps/devspace-api/tsconfig.app.json",
           "assets": [
@@ -67,14 +66,10 @@
           "passWithNoTests": true
         }
       }
-    },
-    "tags": [
-      "scope:api",
-      "type:app"
-    ]
+    }
   },
   "dependencies": {
     "@hono/node-server": "^1.14.4",
-    "hono": "^4.8.0"
+    "hono": "^4.8.2"
   }
 }

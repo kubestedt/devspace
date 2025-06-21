@@ -67,5 +67,9 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.4",
+    "hono": "^4.8.2"
   }
 }
